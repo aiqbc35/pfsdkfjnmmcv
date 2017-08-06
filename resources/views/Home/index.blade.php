@@ -1,0 +1,505 @@
+@extends('Common.home')
+@section('css')
+.overlay-inner-image img{
+    height:182.77px;
+}
+.footer-social a{
+    color:#959595;
+}
+@stop
+@section('content')
+    <div class="banner-style1 background-color-gray padding-top-50 padding-bottom-30" id="banner-style1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="image-container">
+                        <img src="demo/1.jpg" alt="" style="height: 500px;" class="img-responsive top-one-image"/>
+                        <a href="#" class="image-overlay top-one-link"></a>
+                        <div class="banner-content clearfix">
+
+                            <div class="banner-category"><a href="#" class="cat">movies</a></div>
+                            <div class="banner-content-details">
+
+
+                                <h2><a href="#"  class="banner-big-title top-one-title">Always somthing Good</a></h2>
+                                <p><span>View</span> <i class="top-one-click">2 hrs ago</i> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="image-container">
+                        <img src="demo/2.jpg" alt="" class="img-responsive"/>
+
+                        <a href="#" class="image-overlay"></a>
+                        <div class="banner-content clearfix">
+
+                            <div class="banner-category"><a href="categorymain.html" class="cat">movies</a></div>
+                            <div class="banner-content-details">
+
+
+                                <h2><a href="detailpage.html"  class="banner-big-title">Always somthing Good</a></h2>
+                                <p><span>View</span> 2 hrs ago </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="image-container">
+                        <img src="demo/3.jpg" alt="" style="height:235px" class="img-responsive top-two-image"/>
+                        <a href="#" class="image-overlay top-two-link"></a>
+                        <div class="clearfix banner-content-small">
+
+                            <div class="banner-content-details pull-left">
+
+                                <h2><a href="" class="top-two-title">soccer is a life</a></h2>
+                                <p><span>VIEW</span> <i class="top-two-click">2 hrs ago</i> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="image-container">
+                        <img src="demo/4.jpg" alt="" style="height: 235px;" class="img-responsive top-three-image"/>
+                        <a href="detailpage.html" class="image-overlay top-three-link"></a>
+                        <div class="clearfix banner-content-small">
+
+                            <div class="banner-content-details pull-left">
+
+                                <h2><a href=""  class="banner-small-title top-three-title">soccer is a life</a></h2>
+                                <p><span>Randy Rayan</span> <i class="top-three-click">2 hrs ago</i> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!--staff picked=============================-->
+    <div class="staff-picked-posts padding-top-20 padding-bottom-20 border-bottom">
+        <div class="container position-relative">
+            <div class=" slider-container">
+
+                <div class="post-advertis">
+                    <img src="images/acd.png" alt="" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--popular videos=============================-->
+    <div class="popular-videos padding-top-70 border-bottom padding-bottom-10">
+        <div class="container position-relative">
+            <div class="slider-container">
+                <div class="small-title">
+                    <h2>Private line <a href="categorymain.html">“ 专属线路 ” <i class="fa fa-angle-right"></i></a> </h2>
+
+                </div>
+
+
+                <div class="row  margin-bottom-70">
+
+                    <div class="slick-image-slider-4 movies-lar private-video">
+
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_2.png" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Cricket Blaster Hits</a></h3>
+                                    <p>Rayan Rose<i class="fa fa-check-circle-o trending-post"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_3.jpg" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">We love’nt it</a></h3>
+                                    <p>Amen Radayy<i class="fa fa-check-circle-o"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_4.jpg" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Ready to Kick it</a></h3>
+                                    <p>Rasyy Bean Tory <i class="fa fa-check-circle-o trending-post"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_6.png" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Flew like butterfly</a></h3>
+                                    <p>Rayan Rose<i class="fa fa-check-circle-o"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_6.png" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Cricket Blaster Hits</a></h3>
+                                    <p>Rayan Rose<i class="fa fa-check-circle-o"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_6.png" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">We love’nt it</a></h3>
+                                    <p>Amen Radayy<i class="fa fa-check-circle-o"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_6.png" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Ready to Kick it</a></h3>
+                                    <p>Rasyy Bean Tory <i class="fa fa-check-circle-o"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_6.png" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Flew like butterfly</a></h3>
+                                    <p>Rayan Rose<i class="fa fa-check-circle-o"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container position-relative">
+            <div class="slider-container">
+                <div class="small-title">
+                    <h2>Public line <a href="music.html">“ 公共线路 ” <i class="fa fa-angle-right"></i></a> </h2>
+
+                </div>
+
+
+                <div class="row  margin-bottom-70">
+
+                    <div class="slick-image-slider-4 movies-lar public-video">
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_4.jpg" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Dancing Party Rocks</a></h3>
+                                    <p>Jhon Amander<i class="fa fa-check-circle-o"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_4.jpg" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Love and Cute song</a></h3>
+                                    <p>Amen Radayy<i class="fa fa-check-circle-o trending-post"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_4.jpg" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Full of Love</a></h3>
+                                    <p>Rasyy Bean Tory <i class="fa fa-check-circle-o"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_4.jpg" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Thinking about you</a></h3>
+                                    <p>Rayan Rose<i class="fa fa-check-circle-o"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_4.jpg" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Dancing Party Rocks</a></h3>
+                                    <p>Jhon Amander<i class="fa fa-check-circle-o"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_4.jpg" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Love and Cute song</a></h3>
+                                    <p>Amen Radayy<i class="fa fa-check-circle-o"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_4.jpg" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Full of Love</a></h3>
+                                    <p>Rasyy Bean Tory <i class="fa fa-check-circle-o trending-post"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="post-details">
+                                <div class="overlay-inner-image">
+                                    <img src="demo/1_4.jpg" alt=""/>
+                                    <a href="detailpage.html" class="inner-image-overlay"></a>
+                                    <div class="watch-icon" data-toggle="tooltip" title="Watch Later" >
+                                        <a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>
+
+                                    </div>
+                                    <div class="overlay-likes-comments clearfix">
+                                        <h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>
+                                            580  <span class="pull-right">02:19</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="image-content background-color-white">
+                                    <h3><a href="detailpage.html">Thinking about you</a></h3>
+                                    <p>Rayan Rose<i class="fa fa-check-circle-o"></i></p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+@stop
+@section('links')
+    <div class="footer-social row padding-top-20">
+    </div>
+@stop
+
+@section('script')
+    <script type="text/javascript">
+        window.onload = function(){
+            $.get("/api/home", { name: "John", time: "2pm" }, function(data){
+                getTop(data.image,data.top);
+                var privateVideo = getPravite(data.image,data.private);
+                var publicVideo = getPravite(data.image,data.public);
+                $(".private-video").html(privateVideo);
+                $(".public-video").html(publicVideo);
+                var _links = '';
+                $.each(data.links,function(i,item)
+                {
+                    _links += '<a href="'+item.link+'" class="col-md-1 col-sm-1 col-xs-12 text-center" target="_blank">'+item.title+'</a>'
+                });
+                $(".footer-social").html(_links);
+            },'json');
+        }
+    </script>
+@stop
