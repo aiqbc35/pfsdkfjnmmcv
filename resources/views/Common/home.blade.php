@@ -91,8 +91,8 @@
                 <div id="navbar-collapse-02" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
                         <li class="propClone"><a href="/"> <i class="fa fa-home"></i>Home(首页)</a></li>
-                        <li class="propClone"><a href="{{url('/list/vip')}}"> <i class="fa fa-film"></i>Private line(专属线路)</a></li>
-                        <li class="propClone"><a href="{{url('/list/public')}}"><i class="fa fa-futbol-o"></i> Public line(公共线路)</a></li>
+                        {{--<li class="propClone"><a href="{{url('/list/vip')}}"> <i class="fa fa-film"></i>Private line(专属线路)</a></li>--}}
+                        <li class="propClone"><a href="{{url('/list/public')}}"><i class="fa fa-futbol-o"></i> Public(公开视频)</a></li>
                         <li class="propClone"><a href="{{url('/member/index')}}"><i class="fa fa-user"></i> Member(会员中心)</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->

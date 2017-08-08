@@ -35,7 +35,7 @@ class ApiController
         $this->autoLogin($request);
 
         $top = $this->getTop($request->top);
-        $public = $this->getPublic();
+        $public = $this->getPublic(0,0,12);
         $private = $this->getPublic(1);
         $link = $this->getLink();
         $data = array(
