@@ -66,8 +66,11 @@
         </div>
         <!-- /.box-body -->
     </div>
+
+@stop
+@section('script')
     <script type="text/javascript">
-        window.onload = function(){
+
             $(".btn-primary").click(function(event){
                 id = $(this).data('id');
                 if (id) {
@@ -101,6 +104,6 @@
                     },'json');
                 }
             });
-        }
+
     </script>
 @stop

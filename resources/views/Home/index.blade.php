@@ -495,7 +495,7 @@
                 var _links = '';
                 $.each(data.links,function(i,item)
                 {
-                    _links += '<a href="'+item.link+'" class="col-md-1 col-sm-1 col-xs-12 text-center" target="_blank">'+item.title+'</a>'
+                    _links += '<a href="'+item.link+'" class="col-md-1 col-sm-1 col-xs-12 text-center" target="_blank">'+item.title.substring(0,12)+'</a>'
                 });
                 $(".footer-social").html(_links);
             },'json');

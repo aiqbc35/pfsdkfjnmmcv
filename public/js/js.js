@@ -28,7 +28,7 @@ function getTop(image,data)
 function getPravite(image,data) {
     var _html = '';
     $.each(data, function(i, item){
-        _html += '<div class="col-md-3 col-sm-3 col-xs-12"><div class="post-details"> <div class="overlay-inner-image"> <img src="' + image + item.image +'" alt=""/> <a href="/view?id=' + item.id +'" class="inner-image-overlay"></a> <div class="watch-icon" data-toggle="tooltip" title="Watch Later" > <a href="/view?id=' + item.id +'"  ><i class="fa fa-clock-o" aria-hidden="true"></i></a> </div> </div> <div class="image-content background-color-white"><h3><a href="/view?id=' + item.id +'">' + item.name + '</a></h3><p>VIEW<i class="fa fa-check-circle-o trending-post">' + item.hit + '</i></p></div></div></div>';
+        _html += '<div class="col-md-3 col-sm-3 col-xs-12"><div class="post-details"> <div class="overlay-inner-image"> <img src="' + image + item.image +'" alt=""/> <a href="/view?id=' + item.id +'" class="inner-image-overlay"></a> <div class="watch-icon" data-toggle="tooltip" title="Watch Later" > <a href="/view?id=' + item.id +'"  ><i class="fa fa-clock-o" aria-hidden="true"></i></a> </div> </div> <div class="image-content background-color-white"><h3><a href="/view?id=' + item.id +'">' + item.name.substring(0,12) + '</a></h3><p>VIEW<i class="fa fa-check-circle-o trending-post">' + item.hit + '</i></p></div></div></div>';
     });
     return _html;
 }
@@ -46,7 +46,8 @@ function pageStyle($total,limit,page,linkPath)
 {
     var totalPage = Math.ceil($total / limit) - 1;
     page = parseInt(page);
-
+    console.log(page);
+    console.log(totalPage);
     $(".previous a").attr('href',linkPath + (page - 1));
     $(".next a").attr('href',linkPath + (page + 1));
 

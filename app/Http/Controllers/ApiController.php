@@ -309,7 +309,7 @@ class ApiController
 
         $type = empty($request->type) ? 0 : $request->type;
         $list = $this->getPublic($type,$start,$limit);
-        $total = $this->getCountVideo(1);
+        $total = $this->getCountVideo($request->type);
         return array(
             'list' => $list,
             'total' => $total,
