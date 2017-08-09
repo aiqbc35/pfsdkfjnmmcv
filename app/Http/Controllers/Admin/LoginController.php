@@ -11,7 +11,7 @@ class LoginController
 {
     public function index ()
     {
-        return view('admin.login');
+        return view('Admin.login');
     }
 
     public function getHalt (Request $request)

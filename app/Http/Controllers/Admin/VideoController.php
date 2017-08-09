@@ -15,7 +15,8 @@ class VideoController
         $ret = Video::with('sort')->where('type','=',0)->where('status','=',1)->get();
         return view('Admin.video',[
             'name' => 'PUBLIC VIDEO',
-            'list' => $ret
+            'list' => $ret,
+            'image' => env('IMAGE_LINK'),
         ]);
     }
 
@@ -101,7 +102,8 @@ class VideoController
         $ret = Video::with('sort')->where('type','=',0)->where('status','=',0)->get();
         return view('Admin.video',[
             'name' => 'loading VIDEO',
-            'list' => $ret
+            'list' => $ret,
+            'image' => env('IMAGE_LINK')
         ]);
     }
     public function setvip (Request $request)
@@ -177,7 +179,8 @@ class VideoController
         $ret = Video::with('sort')->where('type','=',1)->where('status','=',1)->get();
         return view('Admin.video',[
             'name' => 'VIP VIDEO',
-            'list' => $ret
+            'list' => $ret,
+            'image' => env('IMAGE_LINK')
         ]);
     }
 }

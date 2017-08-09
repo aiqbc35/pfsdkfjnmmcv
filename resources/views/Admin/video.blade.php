@@ -26,7 +26,7 @@
                     <tr>
                         <td>{{$value->id}}</td>
                         <td>{{$value->name}}</td>
-                        <td><img src="{{$value->images}}" alt="" width="50"></td>
+                        <td><img src="{{$image . $value->image}}" alt="" width="50"></td>
                         <td>{{$value->link}}</td>
                         <td>{{$value->hit}}</td>
                         <td>{{$value['Sort']->name}}</td>
