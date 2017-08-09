@@ -240,7 +240,12 @@ class ApiController
             $info = Video::find($request->id);
             if ($info) {
 
-
+                if ($info->status == 0) {
+                    return array(
+                        'status' => 3,
+                        'msg' => '没有这个视频！'
+                    );
+                }
 
                 if ($info->type == 1) {
 
@@ -323,7 +328,7 @@ class ApiController
         if (empty($num)) {
             $num = 3;
         }
-        return Video::orderBy('hit','desc')->offset(0)->limit($num)->get();
+        return Video::where('status','=',1)->orderBy('hit','desc')->offset(0)->limit($num)->get();
     }
 
     /**
