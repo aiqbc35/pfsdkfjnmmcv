@@ -35,7 +35,7 @@ class ApiController
         $this->autoLogin($request);
 
         $top = $this->getTop($request->top);
-        $public = $this->getPublic(0,0,12);
+        $public = $this->getPublic(0,0,$request->limit);
         $private = $this->getPublic(1);
         $link = $this->getLink();
         $data = array(
@@ -48,6 +48,16 @@ class ApiController
         return $data;
     }
 
+    /**
+     * 随机调取视频服务器
+     * @param Request $request
+     * @return mixed
+     */
+    static protected function getVideService ()
+    {
+        $serviceList = include config_path('videoservice.php');
+        return $serviceList[array_rand($serviceList,1)];
+    }
     /**
      * 根据cookie获取用户信息
      * @param Request $request
@@ -268,15 +278,21 @@ class ApiController
                     $data['status'] = 1;
                     $data['info'] = $info;
                     $data['image'] = env('IMAGE_LINK');
-                    $data['link'] = env('VIDEO_LINK');
+                    $data['link'] = self::getVideService();
+
+                    $info->hit = $info->hit + 1;
+                    $info->save();
+
 
                 }else{
 
                     $data['status'] = 1;
                     $data['info'] = $info;
                     $data['image'] = env('IMAGE_LINK');
-                    $data['link'] = env('VIDEO_LINK');
+                    $data['link'] = self::getVideService();
 
+                    $info->hit = $info->hit + 1;
+                    $info->save();
                 }
 
             }else{

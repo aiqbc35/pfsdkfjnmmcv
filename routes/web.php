@@ -36,6 +36,14 @@ Route::group(['prefix' => 'member'],function()
     Route::get('/index','HomeController@member');
 });
 
+Route::group(['prefix' => 'mobile'],function()
+{
+    Route::get('/','MobileController@index');
+    Route::get('/public','MobileController@listPublic');
+    Route::get('/view','MobileController@view');
+});
+
+
 Route::group(['namespace' => 'Admin'],function()
 {
     Route::get('/webadminlogin','LoginController@index');

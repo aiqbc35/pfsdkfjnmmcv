@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>@yield('title')</title>
+    <title>GodSky在线视频</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
@@ -27,6 +27,12 @@
     <script src="{{asset('js/html5shiv.js')}}"></script>
     <script src="{{asset('js/respond.min.js')}}"></script>
     <![endif]-->
+    <script type="text/javascript">
+
+            if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+                window.location.href="/mobile/";
+            }
+    </script>
 </head>
 <body>
 
@@ -116,7 +122,7 @@
                 <p>GodSky © 2016 All Rights Reserved <span>Terms of Use</span> and <span>Privacy Policy</span></p>
             </div>
             <div class="pull-right">
-                <p>Powered by GodSky</p>
+                <p>Powered by GodSky Beta0.75</p>
             </div>
         </div>
 

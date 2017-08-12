@@ -14,16 +14,12 @@
                 <div class="col-md-9 col-sm-12 col-xs-12">
                     <div class="main-video-container">
                         <div class="video-player-main" id="player">
-                            <video id="example_video_2" class="video-js vjs-16-9 vjs-big-play-centered fod-vjs-default-skin vjs-paused vjs-fluid vjs-controls-enabled vjs-workinghover vjs-mux fod-vjs-embed videoPlayer-25c17d6eb2-dimensions vjs-user-inactive" controls preload="none" width="840" height="464" poster="http://vjs.zencdn.net/v/oceans.png" data-setup="{}">
-                                <source src="http://img.ksbbs.com/asset/Mon_1605/0ec8cc80112a2d6.mp4" type="video/mp4">
-                                <track kind="captions" src="{{asset('video-js/examples/shared/example-captions.vtt')}}" srclang="en" label="English" default></track>
-                                <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-                            </video>
+
                         </div>
                     </div>
                     <div class="main-video-container-content">
                         <div class="banner-category"><a href="javascript:;" class="cat">movies</a></div>
-                        <h1 class="title">Always somthing Good</h1>
+                        <h1 class="title"></h1>
 
                     </div>
 
@@ -35,54 +31,6 @@
                         </div>
                         <div class="widget-aside">
                             <div class="latest-video-widget">
-                                <div class="latest-videos-post">
-                                    <div class="image-container">
-                                        <img src="demo/lt2.jpg" alt="" width="270" height="121"/>
-                                        <a href="" class="image-overlay"></a>
-                                        <div class="banner-content-small">
-                                            <div class="banner-play-sign banner-content-small-font pull-left"></div>
-
-                                        </div>
-                                    </div>
-                                    <h4><a href="">Analyzing Generous Autobiography</a></h4>
-                                    <p class="video-widget-subtitle">2 hours ago <span><i class="fa fa-eye"></i> 150 views  </span></p>
-                                </div>
-                                <div class="latest-videos-post">
-                                    <div class="image-container">
-                                        <img src="demo/lt2.jpg" alt="" width="270" height="121"/>
-                                        <a href="" class="image-overlay"></a>
-                                        <div class="banner-content-small">
-                                            <div class="banner-play-sign banner-content-small-font pull-left"></div>
-
-                                        </div>
-                                    </div>
-                                    <h4><a href="">Analyzing Generous Autobiography</a></h4>
-                                    <p class="video-widget-subtitle">2 hours ago <span><i class="fa fa-eye"></i> 150 views  </span></p>
-                                </div>
-                                <div class="latest-videos-post">
-                                    <div class="image-container">
-                                        <img src="demo/lt2.jpg" alt="" width="270" height="121"/>
-                                        <a href="" class="image-overlay"></a>
-                                        <div class="banner-content-small">
-                                            <div class="banner-play-sign banner-content-small-font pull-left"></div>
-
-                                        </div>
-                                    </div>
-                                    <h4><a href="">Analyzing Generous Autobiography</a></h4>
-                                    <p>2 hours ago</p>
-                                </div>
-                                <div class="latest-videos-post">
-                                    <div class="image-container">
-                                        <img src="demo/lt2.jpg" alt="" width="270" height="121"/>
-                                        <a href="" class="image-overlay"></a>
-                                        <div class="banner-content-small">
-                                            <div class="banner-play-sign banner-content-small-font pull-left"></div>
-
-                                        </div>
-                                    </div>
-                                    <h4><a href="">Analyzing Generous Autobiography</a></h4>
-                                    <p class="video-widget-subtitle">2 hours ago <span><i class="fa fa-eye"></i> 150 views  </span></p>
-                                </div>
 
                             </div>
                         </div>

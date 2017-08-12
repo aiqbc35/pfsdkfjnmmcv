@@ -1,106 +1,80 @@
-$("div").ajaxStart(function(){
-    var loading = layer.load(1, {
-        shade: [0.1,'#fff'] //0.1透明度的白色背景
-    });
-});
-$("div").ajaxStop(function(){
-    layer.close(loading);
-});
+$(document).on('ajaxStart',function(){
+    getLoading();
+})
+$(document).on('ajaxStop',function(){
+    closeLoading();
+})
 
-function getTop(image,data)
-{
-    $(".top-one-image").attr('src',image + data[0].image);
-    $(".top-one-title").text(data[0].name).attr('href','/view?id=' + data[0].id);
-    $(".top-one-click").text(data[0].hit);
-    $(".top-one-link").attr('href','/view?id=' + data[0].id);
-
-    $(".top-two-image").attr('src',image + data[1].image);
-    $(".top-two-title").text(data[1].name).attr('href','/view?id=' + data[1].id);
-    $(".top-two-click").text(data[1].hit);
-    $(".top-two-link").attr('href','/view?id=' + data[1].id);
-
-    $(".top-three-image").attr('src',image + data[2].image);
-    $(".top-three-title").text(data[2].name).attr('href','/view?id=' + data[2].id);
-    $(".top-three-click").text(data[2].hit);
-    $(".top-three-link").attr('href','/view?id=' + data[2].id);
+function getLoading() {
+    html = '<div id="loadingToast" style="opacity: 0; display: none;"> <div class="weui-mask_transparent"></div> <div class="weui-toast"> <i class="weui-loading weui-icon_toast"></i> <p class="weui-toast__content">数据加载中</p> </div> </div>';
+    $("body").append(html);
+    $("#loadingToast").fadeIn(100);
 }
 
-function getPravite(image,data) {
-    var _html = '';
-    $.each(data, function(i, item){
-        _html += '<div class="col-md-3 col-sm-3 col-xs-12"><div class="post-details"> <div class="overlay-inner-image"> <img src="' + image + item.image +'" alt=""/> <a href="/view?id=' + item.id +'" class="inner-image-overlay"></a> <div class="watch-icon" data-toggle="tooltip" title="Watch Later" > <a href="/view?id=' + item.id +'"  ><i class="fa fa-clock-o" aria-hidden="true"></i></a> </div> </div> <div class="image-content background-color-white"><h3><a href="/view?id=' + item.id +'">' + item.name.substring(0,12) + '</a></h3><p>VIEW<i class="fa fa-check-circle-o trending-post">' + item.hit + '</i></p></div></div></div>';
-    });
-    return _html;
+function closeLoading() {
+    $("#loadingToast").fadeOut(100);
+    $("#loadingToast").remove();
 }
 
-function listPage (data,imageLink)
+function homeBanner ()
 {
-    var _html = '';
-    $.each(data,function (i,item) {
-        _html += '<li class="col-md-3 col-sm-3 col-xs-12"> <div class="post-details"> <div class="overlay-inner-image"> <a href="/view?id=' + item.id + '"><img src="'  + imageLink + item.image + '" alt=""/></a> </div> <div class="image-content background-color-white"> <h3><a href="/view?id=' + item.id + '">' + item.name.substring(0,12) + '</a></h3> <p>' +item.hit+ ' View</p> </div> </div> </li>';
+    photoSlide({
+        wrap: document.getElementById('picBox'),
+        loop: true,
+        autoPlay: true,
+        autoTime: 4000,
+        pagination: true
+    });
+}
+function getBanner (data,images)
+{
+    _html = ''
+    $.each(data,function(i,item){
+        clavar = (i == 0) ? 'class="re"' : '';
+        _html += '<li ' + clavar + '> <a href="/mobile/view?id=' + item.id + '"> <img src="' + images + item.image + '" /> </a> </li>';
     });
     return _html;
 }
-
-function pageStyle($total,limit,page,linkPath)
+function getPublicHtml (data,image)
 {
-    var totalPage = Math.ceil($total / limit) - 1;
-    page = parseInt(page);
-    $(".previous a").attr('href',linkPath + (page - 1));
-    $(".next a").attr('href',linkPath + (page + 1));
+    var start = '<div class="weui-flex">';
+    var stop = '</div>';
+    var rethtml = '';
 
-    if (page == 0) {
-        $(".previous").addClass('disabled').find('a').attr('href','#');
-    }
-    if (page == totalPage) {
-        $(".next").addClass('disabled').find('a').attr('href','#');
-    }
+    $.each(data,function(i,item)
+    {
+        i++;
+        _html = '<a class="weui-flex__item" href="/mobile/view?id=' + item.id + '"> <div class="placeholder"> <img src="' + image + item.image + '" alt=""> <div class="pay-info"> <i class="ico-time"></i> <span class="add-time">' + getLocalTime('Y-m-d',item.addtime) + '</span> <i class="ico-view"></i> <span class="views">' + item.hit + '</span> </div> <div class="title">' + item.name.substring(0,8) + '</div> </div> </a>';
 
-    if (page < 0 || page > totalPage) {
-        window.history.go(-1);
-    }
+        if (!(i%2)) {
+            rethtml += _html + stop;
+        }else{
+            rethtml += start + _html;
+        }
 
-}
-
-function alertLink (text,link)
-{
-    layer.alert(text, {
-        skin: 'layui-layer-molv'
-        ,closeBtn: 0,
-    }, function(){
-        window.location.href = link;
     });
+
+    return rethtml;
 }
 
-function alertError (text)
-{
-    layer.alert(text, {
-        skin: 'layui-layer-molv',
-        title:'ERROR'
-        ,closeBtn: 0,
-        btn:'Back'
-    }, function(){
-        window.location.href = '/';
-    });
+
+
+function alert1(text,type) {
+    _html = '<div class="js_dialog" id="iosDialog2" style="opacity: 0; display: none;"> <div class="weui-mask"></div> <div class="weui-dialog"> <div class="weui-dialog__bd">'+text+'</div> <div class="weui-dialog__ft"> <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" data-type="'+type+'">知道了</a> </div> </div> </div>';
+    $("body").append(_html);
+    $("#iosDialog2").fadeIn(200);
+
 }
 
-function alert1 (text){
-    layer.alert(text, {
-        skin: 'layui-layer-molv' //样式类名
-        ,closeBtn: 0,
-        btn:'确认'
-    });
-}
 
-function emailCheck (email)
-{
-    var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
-    if (!myreg.test(email)) {
-        return false;
-    }else{
-        return true;
+$(document).on("click", ".weui-dialog__btn_primary", function() {
+    type = $(this).data('type');
+    if (type) {
+        window.location.href = type;
     }
-}
+    $("#iosDialog2").fadeOut(200);
+    $("#iosDialog2").remove();
+});
 function GetRequest() {
     var url = location.search; //获取url中"?"符后的字串
     var theRequest = new Object();
