@@ -56,7 +56,7 @@ class ApiController
         if (Cache::has('videoServer')) {
             $serviceList = Cache::get('videoServer');
             $list = explode("||",$serviceList);
-            return $serviceList[array_rand($serviceList,1)];
+            return $list[array_rand($list,1)];
         }else{
             $ret = Service::find(3);
             Cache::put('videoServer',$ret->video,3600);

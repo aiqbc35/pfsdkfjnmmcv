@@ -16,8 +16,13 @@ class VideoController
         return view('Admin.video',[
             'name' => 'PUBLIC VIDEO',
             'list' => $ret,
-            'image' => env('IMAGE_LINK'),
+            'image' => self::getImageServer(),
         ]);
+    }
+
+    static protected function getImageServer ()
+    {
+        return app('App\Http\Controllers\ApiController')::getImagesService();
     }
 
     public function add (Request $request)
@@ -103,7 +108,7 @@ class VideoController
         return view('Admin.video',[
             'name' => 'loading VIDEO',
             'list' => $ret,
-            'image' => env('IMAGE_LINK')
+            'image' => self::getImageServer()
         ]);
     }
     public function setvip (Request $request)
@@ -180,7 +185,7 @@ class VideoController
         return view('Admin.video',[
             'name' => 'VIP VIDEO',
             'list' => $ret,
-            'image' => env('IMAGE_LINK')
+            'image' => self::getImageServer()
         ]);
     }
 }
