@@ -253,7 +253,13 @@ class ApiController
         $newtotal = Cache::get('totalVideo');
         $id = array_keys($newtotal);
         $newId = array_rand($id,4);
-        return array($newtotal[$id[$newId[0]]],$newtotal[$id[$newId[1]]],$newtotal[$id[$newId[2]]],$newtotal[$id[$newId[3]]]);
+
+        return array(
+            'status' => 1,
+            'msg' => array($newtotal[$id[$newId[0]]],$newtotal[$id[$newId[1]]],$newtotal[$id[$newId[2]]],$newtotal[$id[$newId[3]]]),
+            'image' => self::getImagesService()
+        );
+
 
     }
 
