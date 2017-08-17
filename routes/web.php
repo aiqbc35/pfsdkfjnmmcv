@@ -69,6 +69,8 @@ Route::group(['namespace' => 'Admin'],function()
         Route::get('/linksadd','LinkController@add');
         Route::get('/link/delete','LinkController@delete');
         Route::get('/logout','IndexController@logout');
+        Route::get('/system','SystemController@index');
+        Route::post('/system/addHalt','SystemController@addHalt');
         Route::post('/link/addHalt','LinkController@addHalt');
     });
 

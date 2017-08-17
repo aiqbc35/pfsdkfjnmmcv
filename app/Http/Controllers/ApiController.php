@@ -11,19 +11,17 @@ namespace App\Http\Controllers;
 
 
 use App\AdminUser;
+use App\Service;
 use App\Uservip;
 use App\Link;
 use App\Video;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Request;
 
 class ApiController
 {
-
-
-    const VIPUPLINK = '/member/index';
-    const LOGINLINK = '/login';
 
     /**
      * 首页接口
@@ -36,14 +34,14 @@ class ApiController
 
         $top = $this->getTop($request->top);
         $public = $this->getPublic(0,0,$request->limit);
-        $private = $this->getPublic(1);
+//        $private = $this->getPublic(1);
         $link = $this->getLink();
         $data = array(
             'top' => $top,
             'public' => $public,
-            'private' => $private,
+//            'private' => $private,
             'links' => $link,
-            'image' => env('IMAGE_LINK'),
+            'image' => self::getImagesService()
         );
         return $data;
     }
@@ -53,10 +51,35 @@ class ApiController
      * @param Request $request
      * @return mixed
      */
-    static protected function getVideService ()
+    static public function getVideService ()
     {
-        $serviceList = include config_path('videoservice.php');
-        return $serviceList[array_rand($serviceList,1)];
+        if (Cache::has('videoServer')) {
+            $serviceList = Cache::get('videoServer');
+            $list = explode("||",$serviceList);
+            return $serviceList[array_rand($serviceList,1)];
+        }else{
+            $ret = Service::find(3);
+            Cache::put('videoServer',$ret->video,3600);
+            return self::getVideService();
+        }
+
+    }
+
+    /**
+     * 获取图片服务器
+     * @return mixed
+     */
+    static public function getImagesService ()
+    {
+        if (Cache::has('imagesServer')) {
+            $images = Cache::get('imagesServer');
+            return $images;
+        }else{
+            $ret = Service::find(3);
+            Cache::put('imagesServer',$ret->images,3600);
+            return self::getImagesService();
+        }
+
     }
     /**
      * 根据cookie获取用户信息
@@ -216,26 +239,22 @@ class ApiController
      */
     public function random ()
     {
-        $total = Video::where('status','=',1)->count();
-        $count = 0;
-        $numlist = array();
-        while ($count < 4){
-            $numlist[] = mt_rand(1,$total);
-            $numlist = array_flip(array_flip($numlist));
-            $count = count($numlist);
-        }
 
-        $info = Video::whereIn('id',$numlist)->get();
+         if (!Cache::has('totalVideo')) {
+             $total = Video::where('status','=',1)->get();
+             $newtotal = array();
+             foreach ($total as $key=>$value){
+                 $newtotal[$value->id] = $value;
+             }
+             Cache::put('totalVideo',$newtotal,1440);
+             return $this->random();
+         }
 
-        if ($info) {
-            $data['status'] = 1;
-            $data['msg'] = $info;
-            $data['image'] =env('IMAGE_LINK');
-        }else{
-            $data['status'] = 0;
-            $data['msg'] = 'Empty';
-        }
-        return $data;
+        $newtotal = Cache::get('totalVideo');
+        $id = array_keys($newtotal);
+        $newId = array_rand($id,4);
+        return array($newtotal[$id[$newId[0]]],$newtotal[$id[$newId[1]]],$newtotal[$id[$newId[2]]],$newtotal[$id[$newId[3]]]);
+
     }
 
     /**
@@ -257,6 +276,9 @@ class ApiController
                     );
                 }
 
+                $images = self::getImagesService();
+                $link = self::getVideService();
+
                 if ($info->type == 1) {
 
                     $user = $this->getUser($request);
@@ -264,36 +286,33 @@ class ApiController
                     if ($user['status'] != 1) {
                         $data['status'] = 11;
                         $data['msg'] = '此为vip影片，请先登陆！';
-                        $data['link'] = self::LOGINLINK;
+                        $data['link'] = '/login';
                         return $data;
                     }
 
                     if ($user['msg']->vipstatus == 1) {
                         $data['status'] = 10;
                         $data['msg'] = '您的会员已过期，请续费后观影！';
-                        $data['link'] = self::VIPUPLINK;
+                        $data['link'] = '/member/index';
                         return $data;
                     }
 
                     $data['status'] = 1;
                     $data['info'] = $info;
-                    $data['image'] = env('IMAGE_LINK');
-                    $data['link'] = self::getVideService();
-
-                    $info->hit = $info->hit + 1;
-                    $info->save();
+                    $data['image'] = $images;
+                    $data['link'] = $link;
 
 
                 }else{
 
                     $data['status'] = 1;
                     $data['info'] = $info;
-                    $data['image'] = env('IMAGE_LINK');
-                    $data['link'] = self::getVideService();
+                    $data['image'] = $images;
+                    $data['link'] = $link;
 
-                    $info->hit = $info->hit + 1;
-                    $info->save();
                 }
+                $info->hit = $info->hit + 1;
+                $info->save();
 
             }else{
                 $data['status'] = 3;
@@ -330,7 +349,7 @@ class ApiController
             'list' => $list,
             'total' => $total,
             'limit' => $limit,
-            'image' => env('IMAGE_LINK'),
+            'image' => self::getImagesService(),
         );
     }
 
@@ -408,7 +427,7 @@ class ApiController
      */
     private function getLink ()
     {
-        return Link::all();
+        return Link::orderBy('sort','asc')->get();
     }
 
 }

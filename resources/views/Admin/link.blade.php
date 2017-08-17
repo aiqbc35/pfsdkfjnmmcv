@@ -11,6 +11,7 @@
                 <tr>
                     <th>ID</th>
                     <th>TITLE</th>
+                    <th>Sort</th>
                     <th>Link</th>
                     <th>SetUp</th>
                 </tr>
@@ -20,6 +21,7 @@
                     <tr>
                         <td>{{$value->id}}</td>
                         <td>{{$value->title}}</td>
+                        <td>{{$value->sort}}</td>
                         <td>{{$value->link}}</td>
                         <td>
 
@@ -33,6 +35,7 @@
                 <tr>
                     <th>ID</th>
                     <th>TITLE</th>
+                    <th>Sort</th>
                     <th>Link</th>
                     <th>SetUp</th>
                 </tr>

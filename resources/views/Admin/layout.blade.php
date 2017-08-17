@@ -145,6 +145,11 @@
                         <li class="{{ Request::getPathInfo() == '/admin/linksadd' ? 'active' : ''}}"><a href="{{url('admin/linksadd')}}"><i class="fa fa-circle-o text-aqua"></i> add link</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="/admin/system">
+                        <i class="fa  fa-gears"></i> <span>System</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="/admin/logout">

@@ -57,6 +57,7 @@ class LinkController
         if ($request->isMethod('post')) {
             $data['title'] = $request->input('title');
             $data['link'] = $request->input('link');
+            $data['sort'] = $request->input('sort');
 
             if ($request->input('id')) {
                 $id = $request->input('id');

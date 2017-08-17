@@ -18,5 +18,5 @@ class Link extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['title','link'];
+    protected $fillable = ['title','link','sort'];
 }

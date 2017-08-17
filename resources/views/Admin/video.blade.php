@@ -76,9 +76,6 @@
                 if (id) {
                     $.get("/admin/video/setvip", { id: id}, function(data){
                         alert(data.msg);
-                        if (data.status == 1) {
-                            window.location.reload();
-                        }
                     },'json');
                 }
             });
@@ -98,9 +95,7 @@
                 if (id) {
                     $.get("/admin/video/setok", { id: id}, function(data){
                         alert(data.msg);
-                        if (data.status == 1) {
-                            window.location.reload();
-                        }
+
                     },'json');
                 }
             });

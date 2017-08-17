@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
-    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="{{asset('css/color.css')}}" rel="stylesheet">
     <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
@@ -24,8 +24,8 @@
     </style>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
-    <script src="{{asset('js/html5shiv.js')}}"></script>
-    <script src="{{asset('js/respond.min.js')}}"></script>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="{{asset('http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js')}}"></script>
     <![endif]-->
     <script type="text/javascript">
 
@@ -35,7 +35,6 @@
     </script>
 </head>
 <body>
-
 
 <div id="top-bar-style1" class="catgroy-main">
     <div class="container">
@@ -65,8 +64,8 @@
                         <div class="hidden-menue2">
                             <ul data-tabs="tabs">
                                 @if (empty(Session::get('email')))
-                                <li class="block-1"><a href="{{url('/register')}}" data-toggle="tab">Sign up(注册)</a></li>
-                                <li class="block-1"><a href="{{url('/login')}}" data-toggle="tab">Sign in(登录)</a></li>
+                                <li class="block-1"><a href="{{url('/register')}}">Sign up(注册)</a></li>
+                                <li class="block-1"><a href="{{url('/login')}}" >Sign in(登录)</a></li>
                                 @else
                                 <li><a href="{{url('/logout')}}"> Sign out(退出)</a></li>
                                 @endif
@@ -122,7 +121,7 @@
                 <p>GodSky © 2016 All Rights Reserved <span>Terms of Use</span> and <span>Privacy Policy</span></p>
             </div>
             <div class="pull-right">
-                <p>Powered by GodSky Beta0.75</p>
+                <p>Powered by GodSky Beta0.76</p>
             </div>
         </div>
 
@@ -130,8 +129,8 @@
 </div>
 
 <!--Load JS here for greater good=============================-->
-<script src="{{asset('js/jquery.js')}}"></script>
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script src="{{asset('js/slick.min.js')}}"></script>
 <script src="{{asset('layer/layer.js')}}"></script>
 
@@ -141,12 +140,7 @@
 <script>
     $(document).ready(function(){
         "use strict";
-
-
-
         $('[data-toggle="tooltip"]').tooltip({placement: "left"});
-
-
     });
 </script>
 @yield('script')
