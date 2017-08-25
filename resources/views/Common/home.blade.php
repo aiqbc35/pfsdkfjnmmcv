@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
-    <link href="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="{{asset('css/color.css')}}" rel="stylesheet">
     <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
-    <link href="{{asset('css/slick.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('css/slick-theme.css')}}" rel="stylesheet" type="text/css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/slick-carousel/1.7.1/slick.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/slick-carousel/1.7.1/slick-theme.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
     @yield('linkcss')
     <style type="text/css">
@@ -24,8 +24,8 @@
     </style>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
-    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
-    <script src="{{asset('http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js')}}"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script type="text/javascript">
 
@@ -96,7 +96,7 @@
                 <div id="navbar-collapse-02" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
                         <li class="propClone"><a href="/"> <i class="fa fa-home"></i>Home(首页)</a></li>
-                        {{--<li class="propClone"><a href="{{url('/list/vip')}}"> <i class="fa fa-film"></i>Private line(专属线路)</a></li>--}}
+                        <li class="propClone"><a href="{{url('/list/vip')}}"> <i class="fa fa-film"></i>VIP line(VIP)</a></li>
                         <li class="propClone"><a href="{{url('/list/public')}}"><i class="fa fa-futbol-o"></i> Public(公开视频)</a></li>
                         <li class="propClone"><a href="{{url('/member/index')}}"><i class="fa fa-user"></i> Member(会员中心)</a></li>
                     </ul>
@@ -121,7 +121,7 @@
                 <p>GodSky © 2016 All Rights Reserved <span>Terms of Use</span> and <span>Privacy Policy</span></p>
             </div>
             <div class="pull-right">
-                <p>Powered by GodSky Beta0.76</p>
+                <p>Powered by GodSky Beta0.8</p>
             </div>
         </div>
 
@@ -129,8 +129,8 @@
 </div>
 
 <!--Load JS here for greater good=============================-->
-<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="http://apps.bdimg.com/libs/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script src="{{asset('js/slick.min.js')}}"></script>
 <script src="{{asset('layer/layer.js')}}"></script>
 

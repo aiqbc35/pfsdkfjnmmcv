@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 
 
 use App\AdminUser;
+use App\Code;
 use App\Service;
 use App\Uservip;
 use App\Link;
@@ -34,12 +35,12 @@ class ApiController
 
         $top = $this->getTop($request->top);
         $public = $this->getPublic(0,0,$request->limit);
-//        $private = $this->getPublic(1);
+        $private = $this->getPublic(1);
         $link = $this->getLink();
         $data = array(
             'top' => $top,
             'public' => $public,
-//            'private' => $private,
+            'private' => $private,
             'links' => $link,
             'image' => self::getImagesService()
         );
@@ -63,6 +64,96 @@ class ApiController
             return self::getVideService();
         }
 
+    }
+
+    /**
+     * 激活码
+     * @param Request $request
+     * @return array
+     */
+    public function actCode (Request $request)
+    {
+        $user = $this->getUser($request);
+        if ($user['status'] != 1) {
+            return $user;
+        }
+        if ($request->isMethod('post')) {
+
+            $data = $request->input();
+
+
+            if ($data['code'] == '') {
+                return array(
+                    'status' => 2,
+                    'msg' => '激活碼不能為空'
+                );
+            }
+
+            $result = Code::where('code','=',$data['code'])->first();
+            if (empty($result->id)) {
+                return array(
+                    'status' => 3,
+                    'msg' => '激活碼不存在'
+                );
+            }
+
+            if ($result->status == 1) {
+                return array(
+                    'status' => 3,
+                    'msg' => '激活碼已使用'
+                );
+            }
+
+            if ($user['msg']->type == 1) {
+                return array(
+                    'status' => 3,
+                    'msg' => '您已是VIP'
+                );
+            }
+            $time = time();
+            $stoptime = strtotime("+1 year");
+
+            $ret = Uservip::create([
+                'user_id'   =>  $user['msg']->id,
+                'startime'  =>  $time,
+                'stoptime'  =>  $stoptime,
+                'addtime'   =>  $time
+            ]);
+
+            $error = array(
+                'status'    =>  5,
+                'msg'       =>  '提交失败！'
+            );
+
+
+            if (!$ret) {
+                return $error;
+            }
+
+            $ret = AdminUser::where('id','=',$user['msg']->id)
+                ->update(
+                    ['type' => 1]
+                );
+            if (!$ret) {
+                return $error;
+            }
+            $result->status = 1;
+            $result->updatetime = time();
+            $result->upuser = $user['msg']->id;
+            $ret = $result->save();
+
+            if ($ret) {
+                return array(
+                    'status' => 1,
+                    'msg'   => '激活成功'
+                );
+            }else{
+                return $error;
+            }
+
+
+
+        }
     }
 
     /**
@@ -111,6 +202,7 @@ class ApiController
                     $info->save();
                     $vipstatus = 1;
                 }
+
                 if (time() > $vip->stoptime){
                     $info->type = 0;
                     $info->save();
@@ -118,6 +210,7 @@ class ApiController
                 }
                 $info->viptime = $vip->stoptime;
                 $info->vipstatus = $vipstatus;
+
             }
 
             return array(
@@ -128,7 +221,7 @@ class ApiController
         }else{
             return array(
                 'status' => 2,
-                'msg' => '您还没有登陆！'
+                'msg' => '您還沒有登陸！'
             );
         }
     }
@@ -156,12 +249,12 @@ class ApiController
                 Session::put('email',$info->username);
                 return array(
                     'status' => 1,
-                    'msg' => '登陆成功！'
+                    'msg' => '登陸成功！'
                 );
             }else{
                 return array(
                     'status' => 5,
-                    'msg' => '邮箱或密码错误！'
+                    'msg' => '郵箱或密碼錯誤！'
                 );
             }
 
@@ -290,9 +383,16 @@ class ApiController
                     $user = $this->getUser($request);
 
                     if ($user['status'] != 1) {
+                        $data['status'] = 12;
+                        $data['msg'] = '您还没登陆，请先登陆！';
+                        $data['link'] = '/mobile/login';
+                        return $data;
+                    }
+
+                    if ($user['msg']->type != 1) {
                         $data['status'] = 11;
-                        $data['msg'] = '此为vip影片，请先登陆！';
-                        $data['link'] = '/login';
+                        $data['msg'] = '此为vip影片，请升级VIP！';
+                        $data['link'] = '/mobile/member';
                         return $data;
                     }
 

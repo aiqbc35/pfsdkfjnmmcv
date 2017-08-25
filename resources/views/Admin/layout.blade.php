@@ -145,9 +145,14 @@
                         <li class="{{ Request::getPathInfo() == '/admin/linksadd' ? 'active' : ''}}"><a href="{{url('admin/linksadd')}}"><i class="fa fa-circle-o text-aqua"></i> add link</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="{{ Request::getPathInfo() == '/admin/system' ? 'active' : ''}}">
                     <a href="/admin/system">
                         <i class="fa  fa-gears"></i> <span>System</span>
+                    </a>
+                </li>
+                <li class="{{ Request::getPathInfo() == '/admin/code' ? 'active' : ''}}">
+                    <a href="/admin/code">
+                        <i class="fa  fa-gears"></i> <span>Code</span>
                     </a>
                 </li>
 

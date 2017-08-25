@@ -37,7 +37,7 @@
                             @if ($value->status == 0)
                             <button type="button" class="btn btn-success" data-id="{{$value->id}}">SETOK</button>
                             @endif
-                            @if ($value->type == 0 and $value->status == 1)
+                            @if ($value->type == 0)
                                 <button type="button" class="btn btn-primary" data-id="{{$value->id}}">SET VIP</button>
                             @endif
 

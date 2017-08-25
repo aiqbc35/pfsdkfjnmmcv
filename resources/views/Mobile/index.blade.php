@@ -186,16 +186,16 @@
         </div>
     </div>
     <div class="page__bd">
-        {{--<div class="weui-flex">--}}
-            {{--<div class="weui-flex__item">--}}
-                {{--<div class="bd-title">--}}
-                    {{--<i class="ico-pay"></i>--}}
-                    {{--<span>PRIVATE LINE “ 专属线路 ”</span>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        {{--<article id="private-video">--}}
-        {{--</article>--}}
+        <div class="weui-flex">
+            <div class="weui-flex__item">
+                <div class="bd-title">
+                    <i class="ico-pay"></i>
+                    <span>VIP LINE “ VIP ”</span>
+                </div>
+            </div>
+        </div>
+        <article id="private-video">
+        </article>
         <div class="weui-flex">
             <div class="weui-flex__item">
                 <div class="bd-title">
@@ -218,6 +218,7 @@
                 $("#picList").html(getBanner(data.top,data.image));
                 homeBanner();
                 $("#public-video").html(getPublicHtml(data.public,data.image));
+                $("#private-video").html(getPublicHtml(data.private,data.image));
             },'json');
 
 

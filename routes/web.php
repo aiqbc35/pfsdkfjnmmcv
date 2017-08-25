@@ -29,6 +29,7 @@ Route::group(['prefix' => 'api'],function()
     Route::post('/reg','ApiController@reg');
     Route::post('/login','ApiController@login');
     Route::get('/getUser','ApiController@getUser');
+    Route::post('/actcode','ApiController@actCode');
 });
 
 Route::group(['prefix' => 'member'],function()
@@ -41,6 +42,10 @@ Route::group(['prefix' => 'mobile'],function()
     Route::get('/','MobileController@index');
     Route::get('/public','MobileController@listPublic');
     Route::get('/view','MobileController@view');
+    Route::get('/register','MobileController@register');
+    Route::get('/login','MobileController@login');
+    Route::get('/member','MobileController@member');
+    Route::get('/vip','MobileController@vip');
 });
 
 
@@ -72,6 +77,8 @@ Route::group(['namespace' => 'Admin'],function()
         Route::get('/system','SystemController@index');
         Route::post('/system/addHalt','SystemController@addHalt');
         Route::post('/link/addHalt','LinkController@addHalt');
+        Route::get('/code','CodeController@index');
+        Route::get('/addcode','CodeController@addcode');
     });
 
 

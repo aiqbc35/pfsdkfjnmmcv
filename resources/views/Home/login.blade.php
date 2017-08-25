@@ -67,7 +67,7 @@
                             </div>
                             <div class="form-group login-password">
 
-                                <input type="password" id="regpassword" class="form-control" placeholder="Email(请输入密码)">
+                                <input type="password" id="regpassword" class="form-control" placeholder="Password(请输入密码)">
                             </div>
                             {{--<div class="form-group">--}}
                                 {{--<div class="pad-bottom-10">--}}

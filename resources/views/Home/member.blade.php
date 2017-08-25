@@ -3,16 +3,21 @@
 .admin-information{
     bottom:101px;
 }
+.feature-image .image-content{width:100%;}
+.image-content.img-holder-content.background-color-white.pull-left.vipfont p {
+font-size: 16px;
+color: red;
+}
 @stop
 @section('content')
     <div class="channel-banner background-color-gray padding-top-50 padding-bottom-80">
         <div class="container">
             <div class="banner-image-container banner-img">
-                <img src="{{asset('images/ch.jpg')}}" alt="" />
+                <img src="http://storage1.imgchr.com/V2TIK.jpg" alt="" />
                 <div class="slider-over-opacity"></div>
                 <div class="admin-information clearfix">
                     <div class="admin-image">
-                        <a href=""><img src="{{asset('images/admin.png')}}" alt="img description" width="192" height="193"/></a>
+                        <a href=""><img src="http://storage1.imgchr.com/V2hrR.png" alt="img description" width="192" height="193"/></a>
                     </div>
                     <div class="admin-personal-info">
                         <h1 class="title">Danny Ryans</h1>
@@ -60,47 +65,66 @@
 
 
     <!-- category  videos =============================-->
-    {{--<div class="staff-picked-posts padding-top-20 padding-bottom-60">--}}
-        {{--<div class="container">--}}
-            {{--<div class="tab-content">--}}
+    <div class="staff-picked-posts padding-top-20 padding-bottom-60">
+        <div class="container">
+            <div class="tab-content">
 
-                {{--<div class="slide tab-pane active" id="r">--}}
-                    {{--<div class="small-title">--}}
-                        {{--<h2>Featured</h2>--}}
+                <div class="slide tab-pane active" id="r">
+                    <div class="small-title">
+                        <h2>升级VIP</h2>
 
-                    {{--</div>--}}
-                    {{--<div class="feature-image features-post row padding-bottom-40">--}}
+                    </div>
+                    <div class="feature-image features-post vipremo">
 
-                        {{--<div class="col-md-12">--}}
-                            {{--<div class="post-details clearfix">--}}
-                                {{--<div class="overlay-inner-image img-holder pull-left">--}}
-                                    {{--<img src="images/banner1/3.jpg" alt="" height="230" width="270"/>--}}
-                                    {{--<a href="detailpage.html" class="inner-image-overlay"></a>--}}
-                                    {{--<div class="watch-icon" data-toggle="tooltip" title="Watch Later" >--}}
-                                        {{--<a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>--}}
+                        <div class="col-md-6">
+                            <div class="post-details clearfix">
 
-                                    {{--</div>--}}
+                                <div class="image-content img-holder-content background-color-white">
+                                    <div class="form-group">
+                                        <input type="hidden"  id="csrf-token" value="{{ csrf_token() }}">
+                                        <input type="text" id="code" class="form-control" placeholder="請輸入激活碼升級VIP">
+                                    </div>
+                                    <div class="form-group">
 
-                                {{--</div>--}}
-                                {{--<div class="image-content img-holder-content background-color-white pull-left">--}}
-                                    {{--<h3><a href="detailpage.html">Ready to Kick it</a></h3>--}}
-                                    {{--<p class="margin-bottom-0">2 hours ago <span><i class="fa fa-eye"></i> 150 views  </span> </p>--}}
-                                    {{--<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem </p>--}}
-                                    {{--<a class="upload-video" href="detailpage.html"><i class="fa fa-play-circle"></i>Watch video</a>--}}
+                                        <input type="button" class="lp-secondary-btn width-full btn-first-hover" id="putCode" value="提交">
+                                    </div>
 
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-image features-post  padding-bottom-40">
 
-                {{--</div><!-- /#myCarousel -->--}}
+                        <div class="col-md-6">
+                            <div class="post-details clearfix">
 
-            {{--</div>--}}
+                                <div class="image-content img-holder-content background-color-white pull-left vipfont" style="padding-bottom: 50px;">
+                                    <p>VIP會員權益：</p>
+                                    <p>1、享受會員專享高速服務器，看片更清晰更流暢！</p>
+                                    <p>2、優質片源每天新增！</p>
+                                    <p>3、不定期發送1080P高清片源至會員郵箱！</p>
+                                    <p>4、優先體驗公司最新服務！</p>
+                                    <p>5、會員體驗價：10美金/年或70元人民幣/年！</p>
+                                    <div style="margin-top: 29px;">
+                                        <a class="lp-secondary-btn width-full btn-first-hover" href="http://www.yunfaka.com/product/4C3905FD3614ABD3" target="_blank">
+                                            購買激活碼
+                                        </a>
+                                    </div>
 
-        {{--</div>--}}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /#myCarousel -->
+
+            </div>
+
+        </div>
 
 
-    {{--</div>--}}
+    </div>
 
 @stop
 @section('script')
@@ -120,11 +144,30 @@
                     }
                     vipdate = getLocalTime('Y-m-d',data.msg.viptime);
                     $(".vipDate").text(vipdate);
+                    $(".vipremo").remove();
+                    $(".btn-first-hover").remove();
                 }else{
                     $(".isVip").text('普通会员');
                 }
 
         },'json');
     }
+    $("#putCode").click(function(event){
+        var code = $("#code").val();
+        var token = $("#csrf-token").val();
+
+        if (token == '') {
+            alert1('請刷新頁面后再操作')
+        }else if (code == '') {
+            alert1('請輸入驗證碼！')
+        }else{
+            $.post("/api/actcode", { code: code, '_token': token },function(data){
+                if (data.status == 1) {
+                    window.location.reload();
+                }
+                alert1(data.msg);
+            },'json');
+        }
+    });
 </script>
 @stop

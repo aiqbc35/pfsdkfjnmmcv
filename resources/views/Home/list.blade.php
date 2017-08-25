@@ -9,7 +9,7 @@
     <div class="page-title-banner">
         <div class="container clearfix">
             <div class="pull-left page-category-title">
-                <h1 class="sub-title">PRIVATE LINE “ 专属线路 ”</h1>
+                <h1 class="sub-title">VIP LINE “ VIP ”</h1>
                 <p>Videos from our comunity</p>
 
             </div>
@@ -18,7 +18,7 @@
 
                     <li><a href="/">Home</a></li>
                     <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                    <li><a href="javascript:;" class="sub-title">PRIVATE LINE “ 专属线路 ”</a></li>
+                    <li><a href="javascript:;" class="sub-title">VIP LINE “ VIP ”</a></li>
 
                 </ul>
             </div>

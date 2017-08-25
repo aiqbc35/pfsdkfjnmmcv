@@ -40,10 +40,12 @@ a.col-md-1.col-sm-1.col-xs-12.text-center {
 
                         <div class="banner-content clearfix">
                             <h2>告示</h2>
-                            <h4>Welcome to godsky, please remember our permanent website: http://www.godsky.org</h4>
-                            <h4>[ 歡迎來到godsk，請記住我們的永久網址：http://www.godsky.org ]</h4>
-                            <h4>Have any questions, such as: slow access, video can not play ... always welcome to our feedback. Contact post office: support@godsky.org</h4>
-                            <h4>[ 有任何問題，列如：訪問速度慢，視頻播放不了...隨時歡迎向我們反饋。聯繫郵局：support@godsky.org ]</h4>
+                            <h6>Welcome to godsky, please remember our permanent website: http://www.godsky.org</h6>
+                            <h6>[ 歡迎來到godsk，請記住我們的永久網址：http://www.godsky.org ]</h6>
+                            <h6>Have any questions, such as: slow access, video can not play ... always welcome to our feedback. Contact post office: support@godsky.org</h6>
+                            <h6>[ 有任何問題，列如：訪問速度慢，視頻播放不了...隨時歡迎向我們反饋。聯繫郵局：support@godsky.org ]</h6>
+                            <h6>[如閣下發現網址無法訪問，請發送任意內容至wwwgodskyorg@gmail.com獲取最新網址，有任何建議都歡迎您的提出！]</h6>
+                            <h6>[GodSky正式開啟VIP計劃，VIP擁有更新最快，播放最流暢等等更多權益，價格為：10美金/年或70人民幣/年，感謝您對本站的支持！]</h6>
                         </div>
                     </div>
                 </div>
@@ -87,7 +89,7 @@ a.col-md-1.col-sm-1.col-xs-12.text-center {
             <div class=" slider-container">
 
                 <div class="post-advertis">
-                    <img src="images/acd.png" alt="" />
+                    <img src="http://storage1.imgchr.com/V24q1.png" alt="" />
                 </div>
 
             </div>
@@ -96,196 +98,23 @@ a.col-md-1.col-sm-1.col-xs-12.text-center {
 
     <!--popular videos=============================-->
     <div class="popular-videos padding-top-70 border-bottom padding-bottom-10">
-        {{--<div class="container position-relative">--}}
-            {{--<div class="slider-container">--}}
-                {{--<div class="small-title">--}}
-                    {{--<h2>Private line <a href="categorymain.html">“ 专属线路 ” <i class="fa fa-angle-right"></i></a> </h2>--}}
+        <div class="container position-relative">
+            <div class="slider-container">
+                <div class="small-title">
+                    <h2>Private line <a href="categorymain.html">“ 专属线路 ” <i class="fa fa-angle-right"></i></a> </h2>
 
-                {{--</div>--}}
-
-
-                {{--<div class="row  margin-bottom-70">--}}
-
-                    {{--<div class="slick-image-slider-4 movies-lar private-video">--}}
-
-                        {{--<div class="col-md-3 col-sm-3 col-xs-12">--}}
-                            {{--<div class="post-details">--}}
-                                {{--<div class="overlay-inner-image">--}}
-                                    {{--<img src="demo/1_2.png" alt=""/>--}}
-                                    {{--<a href="detailpage.html" class="inner-image-overlay"></a>--}}
-                                    {{--<div class="watch-icon" data-toggle="tooltip" title="Watch Later" >--}}
-                                        {{--<a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>--}}
-
-                                    {{--</div>--}}
+                </div>
 
 
-                                {{--</div>--}}
-                                {{--<div class="image-content background-color-white">--}}
-                                    {{--<h3><a href="detailpage.html">Cricket Blaster Hits</a></h3>--}}
-                                    {{--<p>Rayan Rose<i class="fa fa-check-circle-o trending-post"></i></p>--}}
+                <div class="row  margin-bottom-70">
 
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-md-3 col-sm-3 col-xs-12">--}}
-                            {{--<div class="post-details">--}}
-                                {{--<div class="overlay-inner-image">--}}
-                                    {{--<img src="demo/1_3.jpg" alt=""/>--}}
-                                    {{--<a href="detailpage.html" class="inner-image-overlay"></a>--}}
-                                    {{--<div class="watch-icon" data-toggle="tooltip" title="Watch Later" >--}}
-                                        {{--<a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>--}}
+                    <div class="slick-image-slider-4 movies-lar private-video">
 
-                                    {{--</div>--}}
-                                    {{--<div class="overlay-likes-comments clearfix">--}}
-                                        {{--<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>--}}
-                                            {{--580  <span class="pull-right">02:19</span></h3>--}}
-                                    {{--</div>--}}
+                    </div>
+                </div>
 
-                                {{--</div>--}}
-                                {{--<div class="image-content background-color-white">--}}
-                                    {{--<h3><a href="detailpage.html">We love’nt it</a></h3>--}}
-                                    {{--<p>Amen Radayy<i class="fa fa-check-circle-o"></i></p>--}}
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-md-3 col-sm-3 col-xs-12">--}}
-                            {{--<div class="post-details">--}}
-                                {{--<div class="overlay-inner-image">--}}
-                                    {{--<img src="demo/1_4.jpg" alt=""/>--}}
-                                    {{--<a href="detailpage.html" class="inner-image-overlay"></a>--}}
-                                    {{--<div class="watch-icon" data-toggle="tooltip" title="Watch Later" >--}}
-                                        {{--<a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>--}}
-
-                                    {{--</div>--}}
-                                    {{--<div class="overlay-likes-comments clearfix">--}}
-                                        {{--<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>--}}
-                                            {{--580  <span class="pull-right">02:19</span></h3>--}}
-                                    {{--</div>--}}
-
-                                {{--</div>--}}
-                                {{--<div class="image-content background-color-white">--}}
-                                    {{--<h3><a href="detailpage.html">Ready to Kick it</a></h3>--}}
-                                    {{--<p>Rasyy Bean Tory <i class="fa fa-check-circle-o trending-post"></i></p>--}}
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-md-3 col-sm-3 col-xs-12">--}}
-                            {{--<div class="post-details">--}}
-                                {{--<div class="overlay-inner-image">--}}
-                                    {{--<img src="demo/1_6.png" alt=""/>--}}
-                                    {{--<a href="detailpage.html" class="inner-image-overlay"></a>--}}
-                                    {{--<div class="watch-icon" data-toggle="tooltip" title="Watch Later" >--}}
-                                        {{--<a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>--}}
-
-                                    {{--</div>--}}
-                                    {{--<div class="overlay-likes-comments clearfix">--}}
-                                        {{--<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>--}}
-                                            {{--580  <span class="pull-right">02:19</span></h3>--}}
-                                    {{--</div>--}}
-
-                                {{--</div>--}}
-                                {{--<div class="image-content background-color-white">--}}
-                                    {{--<h3><a href="detailpage.html">Flew like butterfly</a></h3>--}}
-                                    {{--<p>Rayan Rose<i class="fa fa-check-circle-o"></i></p>--}}
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-md-3 col-sm-3 col-xs-12">--}}
-                            {{--<div class="post-details">--}}
-                                {{--<div class="overlay-inner-image">--}}
-                                    {{--<img src="demo/1_6.png" alt=""/>--}}
-                                    {{--<a href="detailpage.html" class="inner-image-overlay"></a>--}}
-                                    {{--<div class="watch-icon" data-toggle="tooltip" title="Watch Later" >--}}
-                                        {{--<a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>--}}
-
-                                    {{--</div>--}}
-                                    {{--<div class="overlay-likes-comments clearfix">--}}
-                                        {{--<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>--}}
-                                            {{--580  <span class="pull-right">02:19</span></h3>--}}
-                                    {{--</div>--}}
-
-                                {{--</div>--}}
-                                {{--<div class="image-content background-color-white">--}}
-                                    {{--<h3><a href="detailpage.html">Cricket Blaster Hits</a></h3>--}}
-                                    {{--<p>Rayan Rose<i class="fa fa-check-circle-o"></i></p>--}}
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-md-3 col-sm-3 col-xs-12">--}}
-                            {{--<div class="post-details">--}}
-                                {{--<div class="overlay-inner-image">--}}
-                                    {{--<img src="demo/1_6.png" alt=""/>--}}
-                                    {{--<a href="detailpage.html" class="inner-image-overlay"></a>--}}
-                                    {{--<div class="watch-icon" data-toggle="tooltip" title="Watch Later" >--}}
-                                        {{--<a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>--}}
-
-                                    {{--</div>--}}
-                                    {{--<div class="overlay-likes-comments clearfix">--}}
-                                        {{--<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>--}}
-                                            {{--580  <span class="pull-right">02:19</span></h3>--}}
-                                    {{--</div>--}}
-
-                                {{--</div>--}}
-                                {{--<div class="image-content background-color-white">--}}
-                                    {{--<h3><a href="detailpage.html">We love’nt it</a></h3>--}}
-                                    {{--<p>Amen Radayy<i class="fa fa-check-circle-o"></i></p>--}}
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-md-3 col-sm-3 col-xs-12">--}}
-                            {{--<div class="post-details">--}}
-                                {{--<div class="overlay-inner-image">--}}
-                                    {{--<img src="demo/1_6.png" alt=""/>--}}
-                                    {{--<a href="detailpage.html" class="inner-image-overlay"></a>--}}
-                                    {{--<div class="watch-icon" data-toggle="tooltip" title="Watch Later" >--}}
-                                        {{--<a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>--}}
-
-                                    {{--</div>--}}
-                                    {{--<div class="overlay-likes-comments clearfix">--}}
-                                        {{--<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>--}}
-                                            {{--580  <span class="pull-right">02:19</span></h3>--}}
-                                    {{--</div>--}}
-
-                                {{--</div>--}}
-                                {{--<div class="image-content background-color-white">--}}
-                                    {{--<h3><a href="detailpage.html">Ready to Kick it</a></h3>--}}
-                                    {{--<p>Rasyy Bean Tory <i class="fa fa-check-circle-o"></i></p>--}}
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-md-3 col-sm-3 col-xs-12">--}}
-                            {{--<div class="post-details">--}}
-                                {{--<div class="overlay-inner-image">--}}
-                                    {{--<img src="demo/1_6.png" alt=""/>--}}
-                                    {{--<a href="detailpage.html" class="inner-image-overlay"></a>--}}
-                                    {{--<div class="watch-icon" data-toggle="tooltip" title="Watch Later" >--}}
-                                        {{--<a href=""  ><i class="fa fa-clock-o" aria-hidden="true"></i></a>--}}
-
-                                    {{--</div>--}}
-                                    {{--<div class="overlay-likes-comments clearfix">--}}
-                                        {{--<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15.1K <i class="fa fa-eye" aria-hidden="true"></i>--}}
-                                            {{--580  <span class="pull-right">02:19</span></h3>--}}
-                                    {{--</div>--}}
-
-                                {{--</div>--}}
-                                {{--<div class="image-content background-color-white">--}}
-                                    {{--<h3><a href="detailpage.html">Flew like butterfly</a></h3>--}}
-                                    {{--<p>Rayan Rose<i class="fa fa-check-circle-o"></i></p>--}}
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-            {{--</div>--}}
-        {{--</div>--}}
+            </div>
+        </div>
         <div class="container position-relative">
             <div class="slider-container">
                 <div class="small-title">
@@ -316,9 +145,9 @@ a.col-md-1.col-sm-1.col-xs-12.text-center {
         window.onload = function(){
             $.get("/api/home", { top:3,limit:12 }, function(data){
                 getTop(data.image,data.top);
-//                var privateVideo = getPravite(data.image,data.private);
+                var privateVideo = getPravite(data.image,data.private);
                 var publicVideo = getPravite(data.image,data.public);
-                //$(".private-video").html(privateVideo);
+                $(".private-video").html(privateVideo);
                 $(".public-video").html(publicVideo);
                 var _links = '';
                 $.each(data.links,function(i,item)

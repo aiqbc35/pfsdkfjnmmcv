@@ -144,8 +144,11 @@
                         updateVideo(data.info,data.image,data.link);
                         var myPlayer =  videojs("example_video_1");
                         myPlayer.load();
-                    }else if(data.status == 10 || data.status == 11){
-                        alert1(data.msg,'/mobile/');
+                    }else if(data.status == 12){
+                        alert1(data.msg,'/mobile/login');
+                    }
+                    else if(data.status == 10 || data.status == 11){
+                        alert1(data.msg,'/mobile/member');
                     }else{
                         alert1(data.msg,'/mobile/');
                     }

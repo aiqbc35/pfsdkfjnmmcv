@@ -72,6 +72,7 @@ class VideoController
 
                 }
             }
+
             //$model = new Video();
 
             $data['name'] = $request->input('title');
