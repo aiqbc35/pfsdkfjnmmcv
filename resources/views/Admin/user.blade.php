@@ -21,7 +21,11 @@
                 <tr>
                     <td>{{$value->id}}</td>
                     <td>{{$value->username}}</td>
-                    <td></td>
+                    <td>
+                        @if($value->logintime != '')
+                            {{date('Y-m-d H:i:s',$value->logintime)}}
+                        @endif
+                    </td>
                     <td>{{date('Y-m-d',$value->addtime)}}</td>
                     <td>
                         @if ($value->type == 0)

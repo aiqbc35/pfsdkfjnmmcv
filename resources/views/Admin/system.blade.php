@@ -35,6 +35,13 @@
                             <textarea class="form-control" name="video" rows="3" placeholder="Enter ...">{{$info->video}}</textarea>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Vip Video Server</label>
+
+                        <div class="col-sm-10">
+                            <textarea class="form-control" name="vipvideo" rows="3" placeholder="Enter ...">{{$info->vipvideo}}</textarea>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">

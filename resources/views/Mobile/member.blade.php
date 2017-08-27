@@ -37,7 +37,7 @@
 
                         <div class="weui-cell__bd" style="line-height: 2em;">
                             <input type="hidden"  id="csrf-token" value="{{ csrf_token() }}">
-                            <input class="weui-input" type="text" id="code" placeholder="請輸入激活碼升級為VIP會員">
+                            <input class="weui-input" type="text" id="code" placeholder="請点击輸入激活碼升級為VIP會員">
                         </div>
                         <div class="weui-cell__ft" style="line-height: 2em;">
                             <button class="weui-vcode-btn">確認激活</button>

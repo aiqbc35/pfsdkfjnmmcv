@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>GodSky在线视频</title>
-    <link href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet">
+    <link href="{{asset('dist/style/weui.min.css')}}" rel="stylesheet">
     <style type="text/css">
         .weui-tab{
             height:auto !important;

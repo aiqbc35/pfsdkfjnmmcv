@@ -162,16 +162,32 @@ class ApiController
      */
     static public function getImagesService ()
     {
+        
         if (Cache::has('imagesServer')) {
-            $images = Cache::get('imagesServer');
-            return $images;
+            $serviceList = Cache::get('imagesServer');
+            $list = explode("||",$serviceList);
+            return $list[array_rand($list,1)];
         }else{
             $ret = Service::find(3);
-            Cache::put('imagesServer',$ret->images,3600);
+            Cache::put('imagesServer',$ret->video,3600);
             return self::getImagesService();
         }
 
     }
+
+    static private function getVipVideoService ()
+    {
+        if (Cache::has('vipVideoServer')) {
+            $images = Cache::get('vipVideoServer');
+            return $images;
+        }else{
+            $ret = Service::find(3);
+            Cache::put('vipVideoServer',$ret->vipvideo,3600);
+            return self::getVipVideoService();
+        }
+    }
+
+
     /**
      * 根据cookie获取用户信息
      * @param Request $request
@@ -377,6 +393,7 @@ class ApiController
 
                 $images = self::getImagesService();
                 $link = self::getVideService();
+                $vip = self::getVipVideoService();
 
                 if ($info->type == 1) {
 
@@ -406,7 +423,7 @@ class ApiController
                     $data['status'] = 1;
                     $data['info'] = $info;
                     $data['image'] = $images;
-                    $data['link'] = $link;
+                    $data['link'] = $vip;
 
 
                 }else{

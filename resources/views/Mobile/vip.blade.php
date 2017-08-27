@@ -148,13 +148,13 @@
                 page = getUrlType.page;
             }
             $.get("/api/getVip", { limit: page,type:1 }, function(data){
-                pageStyle(data.total,data.limit,page,'/mobile/public?page=');
+                pageStyle(data.total,data.limit,page,'/mobile/vip?page=');
                 $(".public-video").html(getPublicHtml(data.list,data.image));
             },'json');
 
             $("#pageNum").change(function(event){
                 id = $(this).val();
-                window.location.href = '/mobile/public?page='+id;
+                window.location.href = '/mobile/vip?page='+id;
             });
 
 
@@ -169,11 +169,11 @@
                 }
 
                 if (page < 0 || page > totalPage) {
-                    window.location.href = '/mobile/public';
+                    window.location.href = '/mobile/vip';
                 }
 
-                $(".uppage").attr('href','/mobile/public?page='+ (page - 1)).text('上一页');
-                $(".nextpage").attr('href','/mobile/public?page='+ (page + 1)).text('下一页');
+                $(".uppage").attr('href','/mobile/vip?page='+ (page - 1)).text('上一页');
+                $(".nextpage").attr('href','/mobile/vip?page='+ (page + 1)).text('下一页');
                 if (page == 0) {
                     $(".uppage").attr('href','javascript:;').text('首页');
                 }

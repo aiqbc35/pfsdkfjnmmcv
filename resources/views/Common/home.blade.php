@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="{{asset('css/color.css')}}" rel="stylesheet">
     <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="https://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://cdn.bootcss.com/slick-carousel/1.7.1/slick.min.css" rel="stylesheet">
-    <link href="https://cdn.bootcss.com/slick-carousel/1.7.1/slick-theme.min.css" rel="stylesheet">
+    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{asset('css/slick.css')}}" rel="stylesheet">
+    <link href="{{asset('css/slick-theme.css')}}" rel="stylesheet">
     <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
     @yield('linkcss')
     <style type="text/css">
@@ -24,8 +24,8 @@
     </style>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
-    <script src="https://cdn.bootcss.com/html5shiv/3.7/html5shiv.min.js"></script>
-    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="{{asset('js/html5shiv.js')}}"></script>
+    <script src="{{asset('js/respond.js')}}"></script>
     <![endif]-->
     <script type="text/javascript">
 
@@ -35,7 +35,6 @@
     </script>
 </head>
 <body>
-
 <div id="top-bar-style1" class="catgroy-main">
     <div class="container">
         <div class="row">
@@ -129,8 +128,8 @@
 </div>
 
 <!--Load JS here for greater good=============================-->
-<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="{{asset('js/jquery.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/slick.min.js')}}"></script>
 <script src="{{asset('layer/layer.js')}}"></script>
 

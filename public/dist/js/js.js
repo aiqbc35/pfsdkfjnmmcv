@@ -26,6 +26,7 @@ function homeBanner ()
         pagination: true
     });
 }
+
 function getBanner (data,images)
 {
     _html = ''
@@ -65,6 +66,7 @@ function alert1(text,type) {
     $("#iosDialog2").fadeIn(200);
 
 }
+
 function emailCheck (email)
 {
     var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;

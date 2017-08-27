@@ -33,6 +33,7 @@ class SystemController
             }
             $info->images = $data['images'];
             $info->video = $data['video'];
+            $info->vipvideo = $data['vipvideo'];
 
             $result = $info->save();
 
