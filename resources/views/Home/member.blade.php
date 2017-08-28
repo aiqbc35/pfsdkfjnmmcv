@@ -8,6 +8,10 @@
 font-size: 16px;
 color: red;
 }
+.radio label, .checkbox label{color:#000;}
+radio{line-height:2rem;}
+.radio, .checkbox{margin-top:-5px !important;margin-bottom:10px !important;}
+.radio label, .checkbox label{padding-left:8px;}
 @stop
 @section('content')
     <div class="channel-banner background-color-gray padding-top-50 padding-bottom-80">
@@ -104,11 +108,12 @@ color: red;
                                     <p>2、優質片源每天新增！</p>
                                     <p>3、不定期發送1080P高清片源至會員郵箱！</p>
                                     <p>4、優先體驗公司最新服務！</p>
-                                    <p>5、會員體驗價：10美金/年或70元人民幣/年！</p>
+                                    <p>5、<strong style="color: #4876FF">勁爆體驗價1天：18元或2美金，1個月：28元或5美金，一季度：58元或9美金，全年98元或15美金。暑期活動價：10美金或70元人民幣/年（截止：2017-09-15）！</strong></p>
                                     <div style="margin-top: 29px;">
-                                        <a class="lp-secondary-btn width-full btn-first-hover" href="http://www.yunfaka.com/product/4C3905FD3614ABD3" target="_blank">
-                                            購買激活碼
-                                        </a>
+                                        {{--<a class="lp-secondary-btn width-full btn-first-hover" href="http://www.yunfaka.com/product/4C3905FD3614ABD3" target="_blank">--}}
+                                            {{--購買激活碼--}}
+                                        {{--</a>--}}
+                                        <a href="javascript:;" class="lp-secondary-btn width-full btn-first-hover" data-toggle="modal" data-target="#myModal">購買激活碼</a>
                                     </div>
 
 
@@ -126,10 +131,57 @@ color: red;
 
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">購買激活碼</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="18">
+                            1天（劲爆体验价:18元)。
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="28">
+                            1月（28元）
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="58">
+                            1季度（58元）
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="78" checked>
+                            1年（原价98/活动价70，活动截止：2017-09-15）
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">购买</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @stop
 @section('script')
 <script type="text/javascript">
+
+    var getUrlType = GetRequest();
+    var pagetype = getUrlType.type;
+
+
     window.onload = function(){
+
         $.get("/api/getUser", { name: "John", time: "2pm" }, function(data){
                 if (data.status != 1) {
                     window.location.href = '/login';
@@ -151,6 +203,32 @@ color: red;
                 }
 
         },'json');
+
+        if (pagetype == 'btn') {
+            $("#myModal").modal('show');
+        }
+
+        $(".btn-primary").click(function(event){
+            var val=$('input:radio[name="optionsRadios"]:checked').val();
+            var shopurl = '';
+            switch (val){
+                case '18':
+                    shopurl = shopurl18;
+                    break;
+                case '28':
+                    shopurl = shopurl28;
+                    break;
+                case '58':
+                    shopurl = shopurl58;
+                    break;
+                case '78':
+                    shopurl = shopurl78;
+                    break;
+            }
+
+            console.log(shopurl);
+        });
+
     }
     $("#putCode").click(function(event){
         var code = $("#code").val();

@@ -41,11 +41,9 @@ a.col-md-1.col-sm-1.col-xs-12.text-center {
                         <div class="banner-content clearfix">
                             <h2>告示</h2>
                             <h6>Welcome to godsky, please remember our permanent website: http://www.godsky.org</h6>
-                            <h6>[ 歡迎來到godsk，請記住我們的永久網址：http://www.godsky.org ]</h6>
-                            <h6>Have any questions, such as: slow access, video can not play ... always welcome to our feedback. Contact post office: support@godsky.org</h6>
-                            <h6>[ 有任何問題，列如：訪問速度慢，視頻播放不了...隨時歡迎向我們反饋。聯繫郵局：support@godsky.org ]</h6>
-                            <h6>[如閣下發現網址無法訪問，請發送任意內容至wwwgodskyorg@mail.ru獲取最新網址，有任何建議都歡迎您的提出！]</h6>
-                            <h6>[GodSky正式開啟VIP計劃，VIP擁有更新最快，播放最流暢等等更多權益，價格為：10美金/年或70人民幣/年，感謝您對本站的支持！]</h6>
+                            <h6>[如閣下發現網址無法訪問，請發送任意內容至<strong style="color: #00A6C7">wwwgodskyorg@mail.ru</strong>獲取最新網址，有任何建議都歡迎您的提出！]</h6>
+                            <h6 style="color: #ca402b">[GodSky正式開啟VIP計劃，VIP擁有更新最快，播放最流暢等等更多權益，劲爆体验价：2美金或18人民幣就可以任意觀看我們的VIP視頻！<a href="{{url('member/index?type=btn')}}"><<<点击购买>>></a>]</h6>
+
                         </div>
                     </div>
                 </div>
@@ -101,7 +99,7 @@ a.col-md-1.col-sm-1.col-xs-12.text-center {
         <div class="container position-relative">
             <div class="slider-container">
                 <div class="small-title">
-                    <h2>Private line <a href="categorymain.html">“ 专属线路 ” <i class="fa fa-angle-right"></i></a> </h2>
+                    <h2>Private line <a href="{{url('/list/vip')}}">“ 专属线路 ” <i class="fa fa-angle-right"></i></a> </h2>
 
                 </div>
 

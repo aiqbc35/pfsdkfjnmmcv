@@ -111,14 +111,8 @@ class ApiController
                 );
             }
             $time = time();
-            $stoptime = strtotime("+1 year");
+            $stoptime = strtotime("+" . $result->type . " day");
 
-            $ret = Uservip::create([
-                'user_id'   =>  $user['msg']->id,
-                'startime'  =>  $time,
-                'stoptime'  =>  $stoptime,
-                'addtime'   =>  $time
-            ]);
 
             $error = array(
                 'status'    =>  5,
@@ -126,13 +120,9 @@ class ApiController
             );
 
 
-            if (!$ret) {
-                return $error;
-            }
-
             $ret = AdminUser::where('id','=',$user['msg']->id)
                 ->update(
-                    ['type' => 1]
+                    ['type' => 1,'viptype'=>$result->type,'vipstoptime' => $stoptime]
                 );
             if (!$ret) {
                 return $error;
@@ -162,7 +152,7 @@ class ApiController
      */
     static public function getImagesService ()
     {
-        
+
         if (Cache::has('imagesServer')) {
             $serviceList = Cache::get('imagesServer');
             $list = explode("||",$serviceList);
@@ -211,20 +201,16 @@ class ApiController
             $vipstatus = 0;
             if ($info->type == 1) {
 
-                $vip = Uservip::where('user_id','=',$info->id)->first();
+                $time = time();
 
-                if (empty($vip)) {
+                if ($time > $info->vipstoptime) {
                     $info->type = 0;
+                    $info->viptype = 0;
                     $info->save();
                     $vipstatus = 1;
                 }
 
-                if (time() > $vip->stoptime){
-                    $info->type = 0;
-                    $info->save();
-                    $vipstatus = 1;
-                }
-                $info->viptime = $vip->stoptime;
+                $info->viptime = $info->vipstoptime;
                 $info->vipstatus = $vipstatus;
 
             }

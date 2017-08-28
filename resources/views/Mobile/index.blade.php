@@ -176,6 +176,16 @@
     </style>
 @endsection
 @section('content')
+    <div class="weui-tab" style="position: unset;height: 100% !important;">
+        <div class="weui-navbar">
+            <a class="weui-navbar__item weui-bar__item_on" href="{{url('/mobile/member/?type=btn')}}">
+                劲爆体验价18元任意观看VIP视频
+            </a>
+        </div>
+        <div class="weui-tab__panel">
+
+        </div>
+    </div>
     <div class="page__hd">
         <div id="picPanel" class="pic-panel">
             <div id="picBox" class="pic-box">

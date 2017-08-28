@@ -113,7 +113,7 @@
                 </li>
                 <li class="{{ Request::getPathInfo() == '/admin/vip' ? 'active' : ''}}">
                     <a href="{{url('admin/vip')}}">
-                        <i class="fa fa-male"></i> <span>VIP User</span>
+                        <i class="fa fa-vimeo"></i> <span>VIP User</span>
                     </a>
                 </li>
 
@@ -150,11 +150,22 @@
                         <i class="fa  fa-gears"></i> <span>System</span>
                     </a>
                 </li>
-                <li class="{{ Request::getPathInfo() == '/admin/code' ? 'active' : ''}}">
-                    <a href="/admin/code">
-                        <i class="fa  fa-gears"></i> <span>Code</span>
+                <li class="treeview {{ Request::getPathInfo() == '/admin/code' ? 'active menu-open' : ''}}">
+                    <a href="#">
+                        <i class="fa fa-paper-plane"></i>
+                        <span>Code</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
                     </a>
+                    <ul class="treeview-menu">
+                        <li class="{{(isset($_GET['id']) && $_GET['id'] == 1) ? 'active' : ''}}"><a href="{{url('/admin/code?id=1')}}"><i class="fa fa-circle-o text-aqua"></i> 1 day</a></li>
+                        <li class="{{ (isset($_GET['id']) && $_GET['id'] == 30) ? 'active' : ''}}"><a href="{{url('/admin/code?id=30')}}"><i class="fa fa-circle-o text-aqua"></i> 1 month</a></li>
+                        <li class="{{(isset($_GET['id']) && $_GET['id'] == 90) ? 'active' : ''}}"><a href="{{url('/admin/code?id=90')}}"><i class="fa fa-circle-o text-aqua"></i> 1 Quarterly</a></li>
+                        <li class="{{(isset($_GET['id']) && $_GET['id'] == 360) ? 'active' : ''}}"><a href="{{url('/admin/code?id=360')}}"><i class="fa fa-circle-o text-aqua"></i> 1 year</a></li>
+                    </ul>
                 </li>
+
 
                 <li>
                     <a href="/admin/logout">

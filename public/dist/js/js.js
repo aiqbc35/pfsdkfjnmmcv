@@ -67,8 +67,7 @@ function alert1(text,type) {
 
 }
 
-function emailCheck (email)
-{
+function emailCheck(email) {
     var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
     if (!myreg.test(email)) {
         return false;

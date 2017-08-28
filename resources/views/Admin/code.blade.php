@@ -7,7 +7,7 @@
         <!-- /.box-header -->
         <div class="box-body">
             <div class="col-sm-12" style="margin-bottom: 10px;">
-                <button type="button" class="btn btn-block btn-primary btn-flat">新增CODE</button>
+                <button type="button" class="btn btn-block btn-primary btn-flat" data-id="{{$id}}">新增CODE</button>
             </div>
 
             <table id="example1" class="table table-bordered table-striped">
@@ -40,7 +40,9 @@
                             @endif
                         </td>
                         <td>
-                            {{$value->username}}
+                            @if(isset($value['adminuser']->username))
+                                {{$value['adminuser']->username}}
+                            @endif
                         </td>
                     </tr>
                 @endforeach
@@ -63,9 +65,10 @@
         window.onload = function(){
 
             $(".btn-flat").click(function(event){
+                var id = $(this).data('id');
 
                 if (confirm('确定新增激活码？') == true) {
-                   $.get("/admin/addcode", { id: 'id'}, function(data){
+                   $.get("/admin/addcode", { id: id}, function(data){
                         alert(data.msg);
                         if (data.status == 1) {
                             window.location.reload();

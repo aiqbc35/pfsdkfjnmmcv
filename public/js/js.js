@@ -1,3 +1,9 @@
+var shopurl18 = 'http://yunfaka.com/product/873C4AE51DDCB4B6';
+var shopurl28 = 'http://yunfaka.com/product/3AD16CFC5F994EE4';
+var shopurl58 = 'http://yunfaka.com/product/BC0D975FA63E5ED1';
+var shopurl78 = 'http://yunfaka.com/product/4C3905FD3614ABD3';
+
+
 $("div").ajaxStart(function(){
     var loading = layer.load(1, {
         shade: [0.1,'#fff'] //0.1透明度的白色背景

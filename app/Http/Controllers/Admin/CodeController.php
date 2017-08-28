@@ -2,37 +2,65 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Code;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class CodeController
 {
     static private $sqlCode;
     static private $newCode;
+    static private $day = [1,7,30,90,360];
+    static private $type = 30;
 
     public function index ()
     {
-        $list = Code::with('sort')->get();
+        $id = $_GET['id'];
+        $day = self::$day;
+
+        if (!in_array($id,$day)) {
+            exit('NO PAGE');
+        }
+
+        $list = Code::with('adminuser')->where('type','=',$id)->get();
 
         return view('Admin.code',[
             'list' => $list,
-            'name' => 'Code'
+            'name' => 'Code',
+            'id'    => $id
         ]);
     }
 
-    public function addCode ()
+
+    public function addCode (Request $request)
     {
 
-        self::$sqlCode = Code::select('code')->get();
-        self::duoToone();
-        $result = self::getCode();
-        if ($result) {
-            $data['status'] = 1;
-            $data['msg'] = '新增成功';
-        }else{
-            $data['status'] = 2;
-            $data['msg'] = '新增失败';
+        $id = $request->input('id');
+
+        if ($id > 0) {
+            $day = self::$day;
+
+            if (!in_array($id,$day)) {
+                return array(
+                    'status' => 3,
+                    'msg'   => '不存在的项目'
+                );
+            }
+            self::$type = $id;
+            self::$sqlCode = Code::select('code')->get();
+            self::duoToone();
+            $result = self::getCode();
+            if ($result) {
+                $data['status'] = 1;
+                $data['msg'] = '新增成功';
+            }else{
+                $data['status'] = 2;
+                $data['msg'] = '新增失败';
+            }
+            return $data;
+
         }
-        return $data;
+
+
     }
 
 
@@ -53,15 +81,16 @@ class CodeController
     {
         $code = array();
         $oldcode = self::$newCode;
-        $num = 50;
+        $num = 40;
         $time = time();
+        $type = self::$type;
 
         for ($i=1;$i<=$num;$i++){
             $de = self::make_coupon_card();
             if (!in_array($de,$oldcode)) {
                 $code[$i]['code'] = $de;
                 $code[$i]['addtime'] = $time;
-
+                $code[$i]['type'] = $type;
             }else{
                 $i++;
             }

@@ -9,6 +9,10 @@
         .weui-tab{
             height:auto !important;
         }
+        .weui-navbar__item.weui-bar__item_on {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
     </style>
     @yield('css')
     <script type="text/javascript">
@@ -21,7 +25,6 @@
 <body ontouchstart>
 <div class="container" id="container">
     <div class="page flex js_show">
-
         @yield('content')
     </div>
 

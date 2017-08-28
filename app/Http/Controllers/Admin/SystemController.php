@@ -14,6 +14,7 @@ class SystemController
     {
         $cache = Cache::get('imagesServer');
         $info = Service::find(3);
+
         return view('Admin.system',[
             'name' => 'System',
             'info' => $info

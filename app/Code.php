@@ -21,7 +21,7 @@ class Code extends Model
     protected $fillable = ['code','addtime'];
 
 
-    public function sort()
+    public function adminuser()
     {
         return $this->hasOne('App\AdminUser','id','upuser');
     }
